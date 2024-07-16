@@ -1,6 +1,12 @@
+import argparse
+parser = argparse.ArgumentParser(description="Найти ходы")
+parser.add_argument("array", help="Путь до файла с массивом")
+args = parser.parse_args()
+a = args.array
+
 arr = []
-print("Введите путь до файла с массивом")
-with open(input()) as f:
+
+with open(a) as f:
     for line in f:
         arr.append(int(line))
 

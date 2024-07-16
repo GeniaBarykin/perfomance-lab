@@ -1,13 +1,18 @@
 import json
+import argparse
+
+parser = argparse.ArgumentParser(description="Соединение файлов")
+parser.add_argument("tests", help="Путь до файла с тестами")
+parser.add_argument("values", help="Путь до файла с значениями")
+args = parser.parse_args()
+t, v = args.tests, args.values
 
 tests = []
-print("Введите путь до файла тестов")
-with open(input()) as f:
+with open(t) as f:
     tests = json.load(f)
 
 values = []
-print("Введите путь до файла значений")
-with open(input()) as f:
+with open(v) as f:
     values = json.load(f)
 
 values = values['values']
